@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aigis AI</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/01990c0840.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="chatbot-container">
+      <div class="chatbot-name"><h1>Aigis AI</h1></div>
+      <div class="chat-container"></div>
+      <div class="typing-container">
+        <div class="typing-textarea">
+          <div class="typing-content">
+            <textarea
+              id="chat-input"
+              spellcheck="false"
+              placeholder="Chat with me bro."
+              required
+            ></textarea>
+            <span id="send-btn"><i class="fa-solid fa-paper-plane"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="mainModule.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
