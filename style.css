@@ -1,3 +1,14 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -16,8 +27,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background: rgba(172, 172, 19, 1); */
-  /* rgb(255, 203, 91) */
   overflow-x: hidden;
 }
 
@@ -97,11 +106,11 @@ body {
 .chat-content,
 .response-content {
   max-width: 100%;
-
   overflow-wrap: break-word;
+  animation: fadeInUp 0.2s ease-in-out;
 }
 
-.chat-content{
+.chat-content {
   display: flex;
   justify-content: end;
 }
