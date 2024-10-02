@@ -9,9 +9,17 @@
   }
 }
 
+@font-face{
+  font-family: Inter;
+  src: url('./fonts/Inter_Regular.ttf');
+}
+
+
+
 * {
   padding: 0;
   margin: 0;
+  font-family: Inter;
   box-sizing: border-box;
 }
 
@@ -126,8 +134,8 @@ body {
 }
 
 .ai-image {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   display: inline-block;
   margin-right: 1rem; /* Add space between the image and text */
 }
@@ -140,7 +148,9 @@ body {
   border-radius: 0.5rem;
   padding: 1rem;
   text-wrap: pretty;
+  text-align: left;
   color: white;
+  font-size: 1.2rem;
 }
 
 .user-text {
@@ -154,6 +164,7 @@ body {
   padding: 1rem;
   text-wrap: pretty;
   color: white;
+  font-size: 1.2rem;
 }
 
 .chat-inner-body {
@@ -163,6 +174,7 @@ body {
   margin: 1rem;
   border-radius: 0.5rem;
   padding: 1rem;
+  padding-right: 0;
   color: white;
   justify-content: end;
 }
