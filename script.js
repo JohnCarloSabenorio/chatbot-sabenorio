@@ -34,7 +34,7 @@ const getChatResponse = async () => {
     pEle.textContent = "n: " + error;
   }
 
-  responseBubble.querySelector(".response-text").appendChild(pEle);
+  responseBubble.querySelector(".response-text").innerHTML = pEle.textContent;
   chatContainer.appendChild(responseBubble);
 };
 

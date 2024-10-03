@@ -9,12 +9,10 @@
   }
 }
 
-@font-face{
+@font-face {
   font-family: Inter;
-  src: url('./fonts/Inter_Regular.ttf');
+  src: url("./fonts/Inter_Regular.ttf");
 }
-
-
 
 * {
   padding: 0;
@@ -66,11 +64,35 @@ body {
 }
 
 .chat-container {
-  background: white;
+  background: rgb(16, 179, 254);
   flex: 1;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+}
+
+/* Custom scrollbar */
+.chat-container::-webkit-scrollbar {
+  width: 12px; /* Width of the vertical scrollbar */
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2); /* Track color */
+  border-radius: 6px; /* Rounded corners for the track */
+  background: transparent; /* Button color */
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 6px; /* Rounded corners for the thumb */
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 203, 91); /* Thumb color on hover */
+}
+
+.chat-container::-webkit-scrollbar-button {
+  background: transparent; /* Button color */
 }
 
 .typing-container {
@@ -130,40 +152,39 @@ body {
   margin: 1rem;
   border-radius: 0.5rem;
   padding: 1rem;
-  color: white;
+  color: black;
 }
 
 .ai-image {
   width: 90px;
   height: 90px;
   display: inline-block;
-  margin-right: 1rem; /* Add space between the image and text */
 }
 
 .response-text {
-  background: rgb(19, 177, 251);
+  background: white;
   display: inline-block;
+  max-width: 70%;
   overflow-wrap: break-word;
   margin: 1rem;
   border-radius: 0.5rem;
-  padding: 1rem;
-  text-wrap: pretty;
-  text-align: left;
-  color: white;
+  color: black;
   font-size: 1.2rem;
+  padding: 1rem;
+  padding-inline: 2rem;
+
 }
 
 .user-text {
-  background: rgb(19, 177, 251);
-  max-width: 80%;
+  background: white;
   display: inline-block;
+  max-width: 70%;
   overflow-wrap: break-word;
-  float: right;
   margin: 1rem;
   border-radius: 0.5rem;
   padding: 1rem;
-  text-wrap: pretty;
-  color: white;
+  padding-inline: 2rem;
+  color: black;
   font-size: 1.2rem;
 }
 
