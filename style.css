@@ -75,6 +75,31 @@ body {
   overflow-y: scroll;
 }
 
+.prompts-container {
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 4rem;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.chat-prompt {
+  background: rgb(255, 203, 91);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
 /* Custom scrollbar */
 .chat-container::-webkit-scrollbar {
   width: 12px; /* Width of the vertical scrollbar */
@@ -186,6 +211,7 @@ body {
   border-radius: 0.5rem;
   font-size: 1.2rem;
   padding: 1rem;
+  line-height: 2rem;
   padding-inline: 1.5rem;
 }
 
