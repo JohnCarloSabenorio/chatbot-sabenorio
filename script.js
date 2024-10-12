@@ -35,7 +35,6 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-
 // Modify getChatResponse to accept a parameter
 const getChatResponse = async (userText) => {
   console.log("user typed:", userText); // Log the user text being processed
@@ -58,7 +57,9 @@ const getChatResponse = async (userText) => {
     pEle.textContent = "Error: " + error; // Changed the error message for clarity
   }
 
-  responseBubble.querySelector(".response-text").innerHTML = marked.parse(pEle.textContent);
+  responseBubble.querySelector(".response-text").innerHTML = marked.parse(
+    pEle.textContent
+  );
   chatContainer.appendChild(responseBubble);
   chatContainer.scrollTo({
     top: chatContainer.scrollHeight,
@@ -66,8 +67,8 @@ const getChatResponse = async (userText) => {
   });
 };
 
-
 const APIHandler = () => {
+  promptsContainer.style.display = "none";
   const userText = chatInput.value.trim(); // Get trimmed user input
   if (!userText) return; // Exit if no input
 
@@ -90,12 +91,13 @@ const APIHandler = () => {
 };
 
 function sendDefinedPrompt(thePrompt) {
+  promptsContainer.style.display = "none";
   const userText = thePrompt; // thePrompt is passed directly from the clicked prompt
   if (!userText) return;
 
   // Call getChatResponse with userText instead of chatInput.value
   getChatResponse(userText);
-  
+
   // Clear chat input and create chat bubble for defined prompt
   chatInput.value = ""; // Clear the input field if necessary
 
@@ -110,7 +112,6 @@ function sendDefinedPrompt(thePrompt) {
     top: chatContainer.scrollHeight,
     behavior: "smooth",
   });
-  promptsContainer.style.display = "none";
 }
 
 sendButton.addEventListener("click", APIHandler);
