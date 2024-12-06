@@ -21,26 +21,9 @@ export default async function getSamplePrompts() {
     model: "gemini-1.5-flash",
   });
 
-  const result = await promptsModel.generateContent(
-    `Create four random generated user prompts and store it in an array written in. Whenever you respond, always just respond with the array and do not reply with any text. Strictly respond with the array only, do not add any unnecessary strings.
-    For example, do not send this kind of array:  \`\`\`json
-[
-  "What is the meaning of life?",
-  "Can you tell me about the history of the world?",
-  "What is the most interesting fact you know?",
-  "Describe the feeling of being alive."
-]
-\`\`\`
-    Instead, send this array: [
-  "What is the meaning of life?",
-  "Can you tell me about the history of the world?",
-  "What is the most interesting fact you know?",
-  "Describe the feeling of being alive."
-]
-
-    DO NOT ADD \`\`\`json IN THE ARRAY.
-`
-  );
+  const result = await promptsModel.generateContent(`
+    Create four random generated user prompts and store them in an array. Always respond with the array only, strictly without enclosing it in backticks or \`\`\`.
+  `);
 
   // Directly parse response to array if result.response.text() supports it
   const response = await result.response.text();
